@@ -9,9 +9,6 @@ android {
   namespace = "com.example.dagger2practice"
   compileSdk = 35
 
-  buildFeatures {
-    buildConfig = true
-  }
 
   defaultConfig {
     applicationId = "com.example.dagger2practice"
@@ -21,6 +18,13 @@ android {
     versionName = "1.0"
 
     testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
+  }
+
+  packaging {
+    resources {
+      excludes.add("META-INF/LICENSE.md")
+      excludes.add("META-INF/NOTICE.md")
+    }
   }
 
   buildTypes {
@@ -51,6 +55,7 @@ dependencies {
   implementation(libs.androidx.ui.graphics)
   implementation(libs.androidx.ui.tooling.preview)
   implementation(libs.androidx.material3)
+  implementation(libs.androidx.databinding.compiler)
   testImplementation(libs.junit)
   androidTestImplementation(libs.androidx.junit)
   androidTestImplementation(libs.androidx.espresso.core)
