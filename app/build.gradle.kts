@@ -7,7 +7,11 @@ plugins {
 
 android {
   namespace = "com.example.dagger2practice"
-  compileSdk = 34
+  compileSdk = 35
+
+  buildFeatures {
+    buildConfig = true
+  }
 
   defaultConfig {
     applicationId = "com.example.dagger2practice"
